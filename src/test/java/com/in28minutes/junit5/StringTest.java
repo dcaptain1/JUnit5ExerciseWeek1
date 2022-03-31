@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * @author Gustav Holst , gusho-0@student.ltu.se
+ * @author Gustav Holst , gushol-0@student.ltu.se
  */
 
 public class StringTest {
