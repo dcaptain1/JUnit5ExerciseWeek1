@@ -11,6 +11,11 @@ import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
+/**
+ * @author Gustav Holst , gusho-0@student.ltu.se
+ */
+
 public class StringTest {
 
     private String str;
@@ -153,11 +158,13 @@ public class StringTest {
         }
 
         @Test
+        @DisplayName("Length should be zero")
         void lengthIsZero(){
             assertEquals(0,str.length());
         }
 
         @Test
+        @DisplayName("uppercase is empty")
         void uppercaseIsEmpty(){
             assertEquals("",str.toUpperCase());
         }
