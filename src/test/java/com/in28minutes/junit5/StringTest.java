@@ -21,6 +21,7 @@ public class StringTest {
     private String str;
 
     @BeforeEach
+    @DisplayName("Before each: ")
     void beforeEach(TestInfo info){
                 System.out.println("Initialize test data before " + info.getDisplayName());
     }
@@ -31,6 +32,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("Testing length of string")
     void length_basic(){
         //Write test code here :)
         //Invoke method
@@ -45,6 +47,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("Test for String greater than zero")
     void length_greater_than_zero() {
         assertTrue("ABCD".length()>0);
         assertTrue("ABC".length()>0);
@@ -54,6 +57,7 @@ public class StringTest {
 
 
     @ParameterizedTest
+    @DisplayName("Parameterized test for string greater than zero")
     @ValueSource(strings = {"ABCD","p", "ABC","A","DEF"})
     void length_greater_than_zero_using_parameterized_test(String str) {
         assertTrue(str.length()>0);
@@ -61,6 +65,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("Uppercase test")
     void uppercase() {
         assertEquals("ABCD","abcd".toUpperCase());
         assertEquals("ABC","abc".toUpperCase());
@@ -70,12 +75,14 @@ public class StringTest {
     }
 
     @ParameterizedTest(name = "{0} toUpperCase is {1}")
+    @DisplayName("Parameterized test for uppercase")
     @CsvSource(value = {"abcd,ABCD","abc,ABC","'',''","abcdefg,ABCDEFG"})
     void uppercase_parameterized_test(String word, String capitalizedWord) {
         assertEquals(capitalizedWord,word.toUpperCase());
     }
 
     @ParameterizedTest(name = "{0} length is {1}")
+    @DisplayName("Parameterized String length test")
     @CsvSource(value = {"abcd,4","abc,3","'',0","abcdefg,7"})
     void length_parameterized_test(String word, int expectedLength) {
         assertEquals(expectedLength,word.length());
@@ -96,6 +103,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("toUppercase test")
     void toUpperCase(){
 
         String str = "abcd";
@@ -110,6 +118,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("contains test 10 times")
     @RepeatedTest(10)
     void contains_basic(){
         String str = "abcdefgh";
@@ -121,6 +130,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("split string test")
     void split_basic(){
         String str = "abc def ghi";
         String actualResult[] = str.split(" ");
@@ -131,6 +141,7 @@ public class StringTest {
     }
 
     @Test
+    @DisplayName("Performance test")
     @Disabled
     void performanceTest() {
         assertTimeout(Duration.ofSeconds(5),
@@ -150,9 +161,11 @@ public class StringTest {
 
 
     @Nested
+    @DisplayName("EmptyString test nested")
     class EmptyStringTest{
 
         @BeforeEach
+        @DisplayName("Emptying string before each")
         void setToEmpty(){
             str = "";
         }
