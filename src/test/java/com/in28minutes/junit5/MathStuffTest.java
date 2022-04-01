@@ -10,16 +10,12 @@ class MathStuffTest {
     @Test
     void addThreeNumbers() {
         MathStuff mathStuff = new MathStuff();
-
-
         assertEquals(5,mathStuff.addThreeNumbers(1,1,3));
     }
 
     @Test
     void addThreeNumbersFailing() {
         MathStuff mathStuff = new MathStuff();
-
-
         assertEquals(5,mathStuff.addThreeNumbers(6,1,3));
     }
 

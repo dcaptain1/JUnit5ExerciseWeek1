@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 public class StringTest {
-
     private String str;
+
 
     @BeforeEach
     @DisplayName("Before each: ")
@@ -27,6 +27,7 @@ public class StringTest {
     }
 
     @AfterEach
+    @DisplayName("After each: ")
     void afterEach(TestInfo info){
         System.out.println("clean up test data after for " + info.getDisplayName() + "\n");
     }
